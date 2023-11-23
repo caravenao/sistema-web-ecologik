@@ -15,37 +15,37 @@
       <!-- Grupo de entrada para Nombre de la Empresa -->
       <div class="form-group" v-if="sessionStore.userData.accountType === 'company'">
         <label class="form-label" for="nombreEmpresa">Nombre de la Empresa</label>
-        <input type="text" id="nombreEmpresa" class="form-input" :value="sessionStore.userData.companyName">
+        <input type="text" id="nombreEmpresa" class="form-input" v-model="sessionStore.userData.companyName">
       </div>
 
       <!-- Grupo de entrada para Nombre -->
       <div class="form-group">
         <label class="form-label" for="nombre">Nombre</label>
-        <input type="text" id="nombre" class="form-input" :value= "sessionStore.userData.names">
+        <input type="text" id="nombre" class="form-input" v-model= "sessionStore.userData.names">
       </div>
 
       <!-- Grupo de entrada para Apellidos -->
       <div class="form-group">
         <label class="form-label" for="apellido">Apellidos</label>
-        <input type="text" id="apellido" class="form-input" :value="sessionStore.userData.surnames">
+        <input type="text" id="apellido" class="form-input" v-model="sessionStore.userData.surnames">
       </div>
 
       <!-- Grupo de entrada para Fecha de Nacimiento -->
       <div class="form-group">
         <label class="form-label" for="fechaNacimiento">Fecha de Nacimiento</label>
-        <input type="date" id="fechaNacimiento" class="form-input" :value="sessionStore.userData.birthDate">
+        <input type="date" id="fechaNacimiento" class="form-input" v-model="sessionStore.userData.birthDate">
       </div>
 
       <!-- Grupo de entrada para Teléfono -->
       <div class="form-group">
         <label class="form-label" for="telefono">Número de Teléfono</label>
-        <input type="tel" id="telefono" class="form-input" :value="sessionStore.userData.phoneNumber">
+        <input type="tel" id="telefono" class="form-input" v-model="sessionStore.userData.phoneNumber">
       </div>
 
       <!-- Grupo de entrada para Dirección -->
       <div class="form-group">
         <label class="form-label" for="direccion">Dirección</label>
-        <input type="text" id="direccion" class="form-input" :value="sessionStore.userData.address">
+        <input type="text" id="direccion" class="form-input" v-model="sessionStore.userData.address">
       </div>
 
       <div class="button-container">
@@ -82,13 +82,12 @@
         }
       },
       async update(){
-        const aaaaa = this.sessionStore.userData.address
         const reqData = {
           names: this.sessionStore.userData.names,
           surnames: this.sessionStore.userData.surnames,
           birthDate: this.sessionStore.userData.birthDate,
           phoneNumber: this.sessionStore.userData.phoneNumber,
-          address: aaaaa,
+          address: this.sessionStore.userData.address,
           companyName: this.sessionStore.userData.companyName,
           accountType: this.sessionStore.userData.accountType,
         }
