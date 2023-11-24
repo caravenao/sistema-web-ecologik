@@ -35,6 +35,16 @@ const router = createRouter({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: '/notices',
+      name: 'NoticesPage',
+      component: () => import('../views/NoticesPage.vue'),
+    },
+    {
+      path: '/notices/:uniqUrlTitle',
+      name: 'NoticeDetailPage',
+      // component: () => import('../views/NoticeDetailPage.vue'),
     }
   ]
 })

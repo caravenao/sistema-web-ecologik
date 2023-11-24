@@ -19,7 +19,7 @@
             Tu reciclaje
             </li>
           </router-link>
-          <router-link to="/noticias" class="nav-link">
+          <router-link to="/notices" class="nav-link">
             <li class="nav-item">
             Noticias
             </li>
