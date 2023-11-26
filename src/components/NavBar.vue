@@ -14,7 +14,7 @@
             Inicio
             </li>
           </router-link>
-          <router-link to="/tu-reciclaje" class="nav-link">
+          <router-link to="" class="nav-link">
             <li class="nav-item">
             Tu reciclaje
             </li>
@@ -29,12 +29,12 @@
             Nosotros
             </li>
           </router-link>
-          <router-link to="/tienda" class="nav-link">
+          <router-link to="" class="nav-link">
             <li class="nav-item">
             Tienda
             </li>
           </router-link>
-          <router-link to="/planes" class="nav-link">
+          <router-link to="" class="nav-link">
           <li class="nav-item">
             Planes
           </li>

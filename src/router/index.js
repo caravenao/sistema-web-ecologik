@@ -44,7 +44,10 @@ const router = createRouter({
     {
       path: '/notices/:uniqUrlTitle',
       name: 'NoticeDetailPage',
-      // component: () => import('../views/NoticeDetailPage.vue'),
+      component: () => import('../views/NoticeDetailPage.vue'),
+      meta: {
+        requiresAuth: false
+      }
     }
   ]
 })
