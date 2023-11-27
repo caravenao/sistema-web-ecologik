@@ -10,7 +10,7 @@
             <div class="card-body">
               <h5 class="card-title">Humus X Kilos {{ n }}</h5> <!-- Puedes reemplazar esto con cualquier propiedad de tu producto -->
               <p class="card-text">$ 10.000</p> <!-- Puedes reemplazar esto con cualquier propiedad de tu producto -->
-              <a href="#" class="btn btn-custom">Añadir al carrito</a>
+              <a href="#" class="btn btn-custom">Ver detalles</a>
             </div>
           </div>
         </div>

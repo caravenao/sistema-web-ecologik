@@ -29,7 +29,7 @@
             Nosotros
             </li>
           </router-link>
-          <router-link to="" class="nav-link">
+          <router-link to="/store" class="nav-link">
             <li class="nav-item">
             Tienda
             </li>

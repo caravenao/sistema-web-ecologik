@@ -9,7 +9,7 @@
             <div class="badge bg-light text-dark mb-4">{{ noticeDetail.category }}</div>
             <div class="notice-content mb-4">
               <p>{{ noticeDetail.description }}</p>
-              <a :href="noticeDetail.link" target="_blank" class="btn btn-primary">Más información</a>
+              <a v-if="noticeDetail.link" :href="noticeDetail.link" target="_blank" class="btn btn-primary">Más información</a>
             </div>
           </div>
         </div>

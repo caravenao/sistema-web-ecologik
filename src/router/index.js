@@ -48,6 +48,16 @@ const router = createRouter({
       meta: {
         requiresAuth: false
       }
+    },
+    {
+      path: '/store',
+      name: 'StorePage',
+      component: () => import('../views/StorePage.vue'),
+    },
+    {
+      path: '/store/:uniqUrlName',
+      name: 'StoreDetailPage',
+      component: () => import('../views/ProductDetailPage.vue'),
     }
   ]
 })
