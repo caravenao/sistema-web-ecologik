@@ -65,12 +65,18 @@ export const useProductStore = defineStore('products', {
         this.cart = [...this.cart]
       }
     },
-
     decrementCounter(item) {
       const productIndex = this.cart.findIndex((p) => p.id === item.id)
       if (productIndex !== -1 && this.cart[productIndex].quantity > 1) {
         this.cart[productIndex].quantity -= 1
         this.cart = [...this.cart]
+      }
+    },
+    updateQuantity(item, quantity) {
+      quantity = parseInt(quantity, 10);
+      if (quantity && quantity > 0) {
+        item.quantity = quantity;
+        // Aquí, también puedes llamar a un método para actualizar el estado global del carrito si es necesario.
       }
     },
     calculateTotal() {

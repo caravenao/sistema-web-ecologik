@@ -58,6 +58,11 @@ const router = createRouter({
       path: '/store/:uniqUrlName',
       name: 'StoreDetailPage',
       component: () => import('../views/ProductDetailPage.vue'),
+    },
+    {
+      path: '/cart',
+      name: 'CartPage',
+      component: () => import('../views/CartPage.vue'),
     }
   ]
 })

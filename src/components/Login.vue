@@ -45,7 +45,7 @@ export default {
     },
     methods: {
         // Your methods go here
-        async login(){
+      async login(){
       const reqData = {
         email: this.email,
         password: this.password

@@ -42,15 +42,14 @@
         </ul>
         <div class="d-flex"> <!-- Contenedor flex para los iconos -->
           <a class="nav-link" href="#">
-            <img class="navbar-icon" src="../assets/img/search_icon.png" alt="buscar" />
-          </a>
-          <a class="nav-link" href="#">
             <router-link :to="buttonIsLogged">
               <img class="navbar-icon" src="../assets/img/_user_icon.png" alt="icono user" />
             </router-link>
           </a>
           <a class="nav-link" href="#">
-            <img class="navbar-icon" src="../assets/img/shopping_cart.png" alt="carrito de compra" />
+            <router-link to="/cart">
+              <img class="navbar-icon" src="../assets/img/shopping_cart.png" alt="carrito de compra" />
+            </router-link>
           </a>
         </div>
       </div>

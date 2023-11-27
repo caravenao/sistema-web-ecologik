@@ -16,7 +16,7 @@
             <p v-else>Estado: No disponible</p>
             <div class="quantity mb-3">
               <label for="quantity">Cantidad:</label>
-              <input type="number" id="quantity" min="1" value="1" class="quantity-input" :disabled="!isAvailable">
+              <input v-model="counter" type="number" id="quantity" min="1" class="quantity-input" :disabled="!isAvailable">
             </div>
             <button class="btn btn-primary" @click="addToCart" :disabled="!isAvailable">Agregar al carrito</button>
           </div>
@@ -26,15 +26,24 @@
   </template>
   
   <script>
+    import { useProductStore } from '../stores/product';
+
   export default {
     name: 'ProductDetail',
     data() {
       return {
         productDetail: null,
+        counter: 1,
       };
     },
     created() {
       this.fetchProductDetail();
+    },
+    setup() {
+      const productStore = useProductStore();
+      return {
+        productStore
+      }
     },
     computed: {
       uniqUrlName() {
@@ -57,7 +66,7 @@
         }
       },
       addToCart() {
-        // Lógica para añadir el producto al carrito
+        this.productStore.addProductToCart(this.productDetail, this.counter);
       },
     }
   };
