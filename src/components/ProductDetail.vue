@@ -77,10 +77,9 @@
             document.querySelector('.added-to-cart-message').style.opacity = 0;
             }, 2500);
 
-            // Oculta completamente el mensaje después de la transición
             setTimeout(() => {
             this.showAddedMessage = false;
-            }, 3000); // 0.5 segundos adicionales para permitir que la transición de opacidad termine
+            }, 3000);
         },
     }
   };
