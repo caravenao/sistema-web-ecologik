@@ -19,6 +19,7 @@
               <input v-model="counter" type="number" id="quantity" min="1" class="quantity-input" :disabled="!isAvailable">
             </div>
             <button class="btn btn-primary" @click="addToCart" :disabled="!isAvailable">Agregar al carrito</button>
+            <p v-show="showAddedMessage" class="added-to-cart-message">Producto agregado al carrito</p>
           </div>
         </div>
       </div>
@@ -34,6 +35,7 @@
       return {
         productDetail: null,
         counter: 1,
+        showAddedMessage: false,
       };
     },
     created() {
@@ -66,8 +68,20 @@
         }
       },
       addToCart() {
-        this.productStore.addProductToCart(this.productDetail, this.counter);
-      },
+            this.productStore.addProductToCart(this.productDetail, this.counter);
+            this.showAddedMessage = true;
+            document.querySelector('.added-to-cart-message').style.opacity = 1; 
+
+            // Inicia la desaparición después de 2.5 segundos
+            setTimeout(() => {
+            document.querySelector('.added-to-cart-message').style.opacity = 0;
+            }, 2500);
+
+            // Oculta completamente el mensaje después de la transición
+            setTimeout(() => {
+            this.showAddedMessage = false;
+            }, 3000); // 0.5 segundos adicionales para permitir que la transición de opacidad termine
+        },
     }
   };
   </script>
@@ -108,5 +122,21 @@
       color: #6c757d;
       cursor: not-allowed;
     }
+
+    .added-to-cart-message {
+        color: #fff;
+        background-color: #28a745; /* Un verde suave */
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        position: fixed; /* O absolute, según tu layout */
+        top: 20px; /* Ajusta según necesites */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+        opacity: 0; /* Empieza oculto */
+        transition: opacity 0.5s ease-in-out; /* Transición suave para la opacidad */
+    }
+
   </style>
   
