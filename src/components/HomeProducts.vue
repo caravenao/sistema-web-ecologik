@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="d-flex justify-content-center mt-3"> <!-- Envuelto el botón en un div con clases para centrar y darle margen superior -->
-          <a href="#" class="btn btn-custom btn-shop">Ver tienda</a>
+          <router-link to="/store" class="btn btn-custom btn-shop">Ver tienda</router-link> <!-- Enlaza al componente Shop.vue -->
         </div>
       </div>
 

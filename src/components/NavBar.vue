@@ -34,7 +34,7 @@
             Tienda
             </li>
           </router-link>
-          <router-link to="" class="nav-link">
+          <router-link to="/service" class="nav-link">
           <li class="nav-item">
             Planes
           </li>
@@ -49,6 +49,7 @@
           <a class="nav-link" href="#">
             <router-link to="/cart">
               <img class="navbar-icon" src="../assets/img/shopping_cart.png" alt="carrito de compra" />
+              <span v-if="totalCartItems > 0" class="cart-item-count">{{ totalCartItems }}</span>
             </router-link>
           </a>
         </div>
@@ -84,10 +85,27 @@
     margin-left: auto; /* Empuja el contenedor de íconos a la derecha en pantallas grandes */
   }
 }
+
+.cart-item-count {
+    position: absolute;
+    top: -5px; /* Ajusta según sea necesario */
+    right: -10px; /* Ajusta según sea necesario */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+  }
+
+  .nav-link {
+    position: relative;
+    /* Otros estilos necesarios para el enlace */
+  }
 </style>
 
 <script>
 import { useSessionStore } from '../stores/session'
+import { useProductStore } from '../stores/product' // Ajusta la ruta según la estructura de tu proyecto
 
 export default {
   name: 'NavBar',
@@ -104,6 +122,10 @@ export default {
       }else {
         return '/profile'
       }
+    },
+    totalCartItems() {
+      const productStore = useProductStore()
+      return productStore.cart.reduce((total, item) => total + item.quantity, 0)
     }
   },
     setup(){
