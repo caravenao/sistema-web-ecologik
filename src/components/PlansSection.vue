@@ -49,12 +49,6 @@
           <input type="email" id="correo" class="input-field">
         </div>
   
-        <!-- Grupo de entrada para RUT -->
-        <div class="form-group">
-          <label class="input-label" for="rut">RUT</label>
-          <input type="text" id="rut" class="input-field">
-        </div>
-  
         <!-- Grupo de entrada para Teléfono -->
         <div class="form-group">
           <label class="input-label" for="telefono">Teléfono</label>
@@ -66,13 +60,7 @@
           <label class="input-label" for="direccion">Dirección</label>
           <input type="text" id="direccion" class="input-field">
         </div>
-  
-        <!-- Grupo de entrada para Notas -->
-        <div class="form-group">
-          <label class="input-label" for="notas">Notas</label>
-          <textarea id="notas" class="input-field"></textarea>
-        </div>
-  
+        
         <div class="form-buttons">
           <button class="submit-btn">Enviar formulario</button>
         </div>
