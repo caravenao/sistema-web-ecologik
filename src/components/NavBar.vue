@@ -14,9 +14,9 @@
             Inicio
             </li>
           </router-link>
-          <router-link to="" class="nav-link">
+          <router-link to="/compost" class="nav-link">
             <li class="nav-item">
-            Tu reciclaje
+            Compostaje
             </li>
           </router-link>
           <router-link to="/notices" class="nav-link">

@@ -68,6 +68,11 @@ const router = createRouter({
       path: '/service',
       name: 'ServicePage',
       component: () => import('../views/PlansPage.vue'),
+    },
+    {
+      path: '/compost',
+      name: 'CompostPage',
+      component: () => import('../views/CompostPage.vue'),
     }
   ]
 })

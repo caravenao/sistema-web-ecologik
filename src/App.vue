@@ -14,6 +14,12 @@ export default {
   setup() {
     const sessionStore = useSessionStore();
     sessionStore.refreshTokens();
+  },
+  computed: {
+    mostrarComponente() {
+      // Retorna 'true' si la ruta actual NO comienza con '/admin'
+      return !this.$route.path.startsWith('/admin');
+    }
   }
 }
 </script>
@@ -21,12 +27,12 @@ export default {
 <template>
   <header>
     <div>
-      <NavBar />
+      <NavBar v-if="mostrarComponente" />
     </div>
   </header>
-  <RouterView />
+    <RouterView />
   <footer>
-    <FooterEc />
+    <FooterEc v-if="mostrarComponente" />
   </footer>
 </template>
 
