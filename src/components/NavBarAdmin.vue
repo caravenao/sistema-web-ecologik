@@ -5,16 +5,16 @@
           <router-link to="/admin/products">Productos</router-link>
         </li>
         <li>
-          <router-link to="/admin/usuarios">Usuarios</router-link>
+          <router-link to="/admin/users">Usuarios</router-link>
         </li>
         <li>
-          <router-link to="/admin/noticias">Noticias</router-link>
+          <router-link to="/admin/notices">Noticias</router-link>
         </li>
         <li>
-          <router-link to="/admin/planes">Planes</router-link>
+          <router-link to="/admin/plans">Planes</router-link>
         </li>
         <li>
-          <router-link to="/admin/compostaje">Compostaje</router-link>
+          <router-link to="/admin/compost">Compostaje</router-link>
         </li>
       </ul>
     </nav>
