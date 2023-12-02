@@ -91,6 +91,11 @@ const router = createRouter({
       path: '/admin/users',
       name: 'AdminUsersPage',
       component: () => import('../views/AdminUsersPage.vue'),
+    },
+    {
+      path: '/admin/notices',
+      name: 'AdminNoticesPage',
+      component: () => import('../views/AdminNoticesPage.vue'),
     }
   ]
 })
