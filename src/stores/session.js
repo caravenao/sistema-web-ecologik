@@ -11,6 +11,13 @@ export const useSessionStore = defineStore('session', {
     refreshTimeOut: null,
   }),
   actions: {
+    addProduct(newProduct) {
+      this.products.push(newProduct);
+    },
+  
+    removeProduct(productId) {
+      this.products = this.products.filter(product => product.id !== productId);
+    },
     setAccountValidated(validated) {
       this.accountValidated = validated
     },
@@ -82,6 +89,6 @@ export const useSessionStore = defineStore('session', {
     },
     isValidated: (state) => {
       return !!state.accountValidated && !!state.userData
-    },
+    }
   }
 })

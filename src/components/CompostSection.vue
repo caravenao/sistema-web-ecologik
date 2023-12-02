@@ -24,7 +24,7 @@
       </div>
 
       <div class="container text-center py-5" v-if="sessionStore.userData">
-        <h2 class="title">¡Y esto has logrado solo tú!</h2>
+        <h2 class="title">¡Y esto es lo que tú haz aportado!</h2>
         <div class="stats-container mt-4">
           <div class="stats-card">
             <h2 class="stats-value">{{ sessionStore.userData.totalOrganicWaste }}Kg</h2>

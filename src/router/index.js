@@ -73,6 +73,19 @@ const router = createRouter({
       path: '/compost',
       name: 'CompostPage',
       component: () => import('../views/CompostPage.vue'),
+    },
+    {
+      path: '/admin',
+      name: 'AdminPage',
+      component: () => import('../views/AdminPage.vue'),
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: '/admin/products',
+      name: 'AdminProductsPage',
+      component: () => import('../views/AdminProductsPage.vue'),
     }
   ]
 })
@@ -85,13 +98,15 @@ function getRouteRequiresAuth(currentRoute){
   return router?.meta?.requiresAuth
 }
 router.beforeEach(async (to, from, next) => {
-  const sessionStore = useSessionStore()
-  const requiresAuth = getRouteRequiresAuth(to)
-  console.log(sessionStore.isLogged)
-  if(requiresAuth && !sessionStore.isLogged){
-    return next('/login')
+  const sessionStore = useSessionStore();
+  const requiresAuth = getRouteRequiresAuth(to);
+
+  console.log(sessionStore.isLogged);
+
+  if (requiresAuth && !sessionStore.isLogged) {
+    return next('/login');
   }
-  return next()
-})
+  return next();
+});
 
 export default router
